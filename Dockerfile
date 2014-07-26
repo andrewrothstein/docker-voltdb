@@ -2,8 +2,8 @@ FROM andrewrothstein/docker-java
 MAINTAINER Andrew Rothstein andrew.rothstein@gmail.com
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y wget git gcc ant
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y ant build-essential ant-optional default-jdk python valgrind ntp ccache git-arch git-completion git-core git-svn git-doc git-email python-httplib2 python-setuptools python-dev apt-show-versions
 
 RUN git clone https://github.com/VoltDb/voltdb.git
-RUN cd voldb ; git checkout -r release-v4.4
-RUN cd voltdb; ant
+WORKDIR voltdb
+RUN ant

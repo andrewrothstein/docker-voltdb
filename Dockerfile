@@ -30,11 +30,26 @@ WORKDIR voltdb
 RUN git checkout voltdb-4.6
 RUN ant
 
-EXPOSE 21212 # Client Port
-EXPOSE 21211 # Admin Port
-EXPOSE 8080 # Web Interface Port
-EXPOSE 3021 # Internal Server Port
-EXPOSE 4560 # Log Port
-EXPOSE 9090 # JMX Port
-EXPOSE 5555 # Replication Port
-EXPOSE 2181 # Zookeeper Port
+# Client Port
+EXPOSE 21212
+
+# Admin Port
+EXPOSE 21211
+
+# Web Interface Port
+EXPOSE 8080
+
+# Internal Server Port
+EXPOSE 3021
+
+# Log Port
+EXPOSE 4560
+
+# JMX Port
+EXPOSE 9090
+
+# Replication Port
+EXPOSE 5555
+
+# Zookeeper Port
+EXPOSE 2181

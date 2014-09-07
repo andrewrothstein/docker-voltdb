@@ -28,7 +28,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y python-dev
 RUN git clone https://github.com/VoltDb/voltdb.git
 WORKDIR voltdb
 RUN git checkout voltdb-4.6
-RUN ant
+RUN ant -Djmemcheck=NO_MEMCHECK
 
 # Client Port
 EXPOSE 21212

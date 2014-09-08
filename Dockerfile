@@ -53,3 +53,5 @@ EXPOSE 5555
 
 # Zookeeper Port
 EXPOSE 2181
+
+ENV PATH ${PATH}:/voltdb/bin

@@ -1,8 +1,7 @@
 FROM andrewrothstein/docker-java
 MAINTAINER Andrew Rothstein andrew.rothstein@gmail.com
 
-RUN DEBIAN_FRONTEND=noninteractive apt-get update
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y ant build-essential curl
+RUN apt-get update && apt-get install --no-install-recommends -y ant build-essential curl
 
 ENV VOLTDB_VERSION 4.9
 

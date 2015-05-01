@@ -7,7 +7,7 @@ ENV VOLTDB_VERSION 5.2.1
 
 RUN curl -L https://github.com/VoltDb/voltdb/archive/voltdb-${VOLTDB_VERSION}.tar.gz | tar zx
 WORKDIR voltdb-voltdb-${VOLTDB_VERSION}
-RUN ant -Djmemcheck=NO_MEMCHECK
+RUN ant -Djmemcheck=NO_MEMCHECK && ant cleantmp cleanugh
 
 # Client Port
 EXPOSE 21212

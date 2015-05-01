@@ -1,9 +1,9 @@
-FROM andrewrothstein/docker-java
+FROM dockerfile/java:oracle-java8
 MAINTAINER Andrew Rothstein andrew.rothstein@gmail.com
 
 RUN apt-get update && apt-get install --no-install-recommends -y ant build-essential curl
 
-ENV VOLTDB_VERSION 5.0.1
+ENV VOLTDB_VERSION 5.2.1
 
 RUN curl -L https://github.com/VoltDb/voltdb/archive/voltdb-${VOLTDB_VERSION}.tar.gz | tar zx
 WORKDIR voltdb-voltdb-${VOLTDB_VERSION}

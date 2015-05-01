@@ -1,7 +1,7 @@
-FROM dockerfile/java:oracle-java8
+FROM dockerfile/java:oracle-java7
 MAINTAINER Andrew Rothstein andrew.rothstein@gmail.com
 
-RUN apt-get update && apt-get install --no-install-recommends -y ant build-essential curl
+RUN apt-get update && apt-get install --no-install-recommends -y python ant build-essential curl
 
 ENV VOLTDB_VERSION 5.2.1
 

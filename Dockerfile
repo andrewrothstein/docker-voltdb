@@ -3,7 +3,7 @@ MAINTAINER Andrew Rothstein andrew.rothstein@gmail.com
 
 RUN apt-get update && apt-get install --no-install-recommends -y python ant build-essential curl
 
-ENV VOLTDB_VERSION 5.3
+ENV VOLTDB_VERSION 5.4
 
 RUN curl -L https://github.com/VoltDb/voltdb/archive/voltdb-${VOLTDB_VERSION}.tar.gz | tar zx
 WORKDIR voltdb-voltdb-${VOLTDB_VERSION}

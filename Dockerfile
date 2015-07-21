@@ -18,6 +18,6 @@ ENV PATH ${PATH}:/voltdb-voltdb-${VOLTDB_VERSION}/bin
 #  4560 : Log Port
 #  9090 : JMX Port
 #  5555 : Replication Port
-#  2181 : Zookeeper Port
-EXPOSE 21212 21211 8080 3021 4560 9090 5555 2181
+#  7181 : Zookeeper Port
+EXPOSE 21212 21211 8080 3021 4560 9090 5555 7181
 

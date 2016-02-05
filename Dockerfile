@@ -1,9 +1,9 @@
-FROM docker.io/java:openjdk-7-jdk
+FROM docker.io/java:openjdk-8-jdk
 MAINTAINER Andrew Rothstein andrew.rothstein@gmail.com
 
-RUN apt-get update && apt-get install --no-install-recommends -y python ant build-essential curl ccache
+RUN apt-get update && apt-get install --no-install-recommends -y python ant build-essential curl ccache cmake
 
-ENV VOLTDB_VERSION 5.8
+ENV VOLTDB_VERSION 6.0
 
 RUN curl -L https://github.com/VoltDb/voltdb/archive/voltdb-${VOLTDB_VERSION}.tar.gz | tar zx
 WORKDIR voltdb-voltdb-${VOLTDB_VERSION}

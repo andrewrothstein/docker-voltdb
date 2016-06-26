@@ -1,0 +1,4 @@
+---
+- hosts: localhost
+  roles:
+    - andrewrothstein.voltdb-build

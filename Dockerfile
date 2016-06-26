@@ -1,14 +1,11 @@
-FROM docker.io/java:openjdk-8-jdk
+FROM andrewrothstein/docker-ansible:ubuntu_trusty
 MAINTAINER Andrew Rothstein andrew.rothstein@gmail.com
 
-RUN apt-get update && apt-get install --no-install-recommends -y python ant build-essential curl ccache cmake
-
-ENV VOLTDB_VERSION 6.0
-
-RUN curl -L https://github.com/VoltDb/voltdb/archive/voltdb-${VOLTDB_VERSION}.tar.gz | tar zx
-WORKDIR voltdb-voltdb-${VOLTDB_VERSION}
-RUN ant -Djmemcheck=NO_MEMCHECK && ant cleantmp cleanugh
-ENV PATH ${PATH}:/voltdb-voltdb-${VOLTDB_VERSION}/bin
+ADD playbook /playbook
+WORKDIR /playbook
+RUN ansible-galaxy install -r requirements.yml
+RUN ansible-playbook playbook.yml
+ENV PATH ${PATH}:/voltdb/voltdb-voltdb-${VOLTDB_VERSION}/bin
 
 # Ports
 # 21212 : Client Port

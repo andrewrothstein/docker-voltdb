@@ -3,7 +3,7 @@ MAINTAINER Andrew Rothstein andrew.rothstein@gmail.com
 
 RUN apt-get update \
  && apt-get install --no-install-recommends -y \
- ntp apt-show-versions \
+ ntp \
  python python-httplib2 python-setuptools python-dev \
  ant ant-optional \
  build-essential cmake ccache valgrind \

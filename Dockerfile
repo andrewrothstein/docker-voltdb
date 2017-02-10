@@ -10,7 +10,7 @@ RUN apt-get update \
  git-arch git-completion git-core git-svn git-doc git-email \
  curl 
 
-ENV VOLTDB_VERSION 6.6
+ENV VOLTDB_VERSION 7.0
 
 RUN curl -L https://github.com/VoltDb/voltdb/archive/voltdb-${VOLTDB_VERSION}.tar.gz | tar zx
 WORKDIR voltdb-voltdb-${VOLTDB_VERSION}
